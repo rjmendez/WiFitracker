@@ -8,7 +8,7 @@ sudo killall rtl_tcp
 sudo killall rtlamr
 
 find /home/pi/ERT/ -maxdepth 1 -type f -size -2c -delete
-rsync -avz ERT/rtlamr* pi@172.16.42.245:/home/pi/Kismet/ERT
+rsync -avz /home/pi/ERT/rtlamr* pi@172.16.42.245:/home/pi/Kismet/ERT
 rsync -avz /home/pi/zbwalk pi@172.16.42.245:/home/pi/Kismet/ERT
 mv /home/pi/ERT/rtlamr* /home/pi/ERTrsync/
 mkdir /home/pi/ERT/
