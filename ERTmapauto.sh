@@ -1,5 +1,5 @@
 #!/bin/bash
-ERTDIR="~/Kismet/ERT/"
+ERTDIR="/home/pi/Kismet/ERT/"
 CSVCONV="python test_csvtokml.py"
 # clean up
 find "$ERTDIR" -maxdepth 1 -type f -size -112c -delete
