@@ -1,0 +1,13 @@
+[Unit]
+Description=Kismet server service
+After=sshd.service
+Requires=sshd.service
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/bin/su pi -c 'kismet_server'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
