@@ -44,7 +44,7 @@ then
     rm -R "$CAPDIR"*
     echo "Log Dump Completed!"
     # Restart Kismet now
-    killall kismet_server
+    systemctl restart kismet.service
 else
    echo "Unable to reach wigle.net"
 fi
