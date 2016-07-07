@@ -19,7 +19,4 @@ rtl_tcp &> /dev/null &
 # sleep 5 seconds
 sleep 5
 # start rtlamr and add gps location
-#rtlamr -format=csv -logfile=/home/pi/ERT/rtlamr$DATE.log -unique=true &
-#rtlamr -format=csv -quiet=true | while IFS= read -r line; do echo "$line,$(gpspipe 172.16.42.245 -w -n 10 | grep -o -m 1 -E '.lat.{0,15}|.lon.{0,15}|.alt.{0,14}' | sed 's/"lat"://' | sed 's/,//' | sed 's/"lon"://' | sed 's/,//' | sed 's/"alt"://' | sed 's/,//' | sed 's/\"//' | sed 's/eps//' | sed 's/ep//' | sed 's/e//' | tr  '\n' ,)"; done > /home/pi/ERT/rtlamr$DATE.log &
-#rtlamr -format=csv -msgtype=scm+ -quiet=true | while IFS= read -r line; do echo "$line,$(gpspipe 172.16.42.245 -w -n 10 | grep -o -m 1 -E '.lat.{0,15}|.lon.{0,15}|.alt.{0,14}' | sed 's/"lat"://' | sed 's/,//' | sed 's/"lon"://' | sed 's/,//' | sed 's/"alt"://' | sed 's/,//' | sed 's/\"//' | sed 's/eps//' | sed 's/ep//' | sed 's/s//' | sed 's/x//' | tr  '\n' ,)"; done > /home/pi/ERT/rtlamr$DATE.log &
-rtlamr -format=csv -msgtype=scm -quiet=true | while IFS= read -r line; do echo "$line,$(gpspipe 172.16.42.245 -w -n 10 | grep -o -m 1 -E '.lat.{0,15}|.lon.{0,15}|.alt.{0,14}' | sed 's/"lat"://' | sed 's/,//' | sed 's/"lon"://' | sed 's/,//' | sed 's/"alt"://' | sed 's/,//' | sed 's/\"//' | sed 's/eps//' | sed 's/ep//' | sed 's/s//' | sed 's/x//' | tr  '\n' ,)"; done > /home/pi/ERT/rtlamr$DATE.log &
+rtlamr -format=csv -msgtype=scm -quiet=true | while IFS= read -r line; do echo "$line,$(gpspipe -w -n 10 | grep -o -m 1 -E '.lat.{0,15}|.lon.{0,15}|.alt.{0,14}' | sed 's/"lat"://' | sed 's/,//' | sed 's/"lon"://' | sed 's/,//' | sed 's/"alt"://' | sed 's/,//' | sed 's/\"//' | sed 's/eps//' | sed 's/ep//' | sed 's/s//' | sed 's/x//' | tr  '\n' ,)"; done > /home/pi/ERT/rtlamr$DATE.log &
