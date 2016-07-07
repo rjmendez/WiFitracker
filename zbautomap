@@ -1,4 +1,5 @@
 #!/bin/bash
 sudo killall zbwardrive
 cd /home/pi/zbwalk
-sudo zbwardrive -a -v -g &>> zbwalk.log &
+#sudo zbwardrive -a -v -g &>> zbwalk.log &
+sudo zbwardrive -a -v -g &
